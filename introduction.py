@@ -40,6 +40,7 @@ df["Edad en 5 años"] = df["Edad"] + 5 #Create a new columns w Edad plus five fo
 df["Profesión"] = "Doctora", "Niñero", "Secretario", "Ingeniero","Doctora", "Ingeniera","Karateka","Judoca"
 #Create a whole new column w specific info for each row
 df.loc[5, "Ciudad"] = "Chiapa de Corzo" # Replace info in a specific location
-df ["Mayor de edad"] = df["Edad"] >= 18 
+df ["Mayor de edad"] = df["Edad"] >= 18 #Create a new column evaluating if info in Edad is upper than 18 
+#If is true row will have true in the register, if is false will have false in the rgister
 
 print(df)
