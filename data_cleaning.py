@@ -20,5 +20,21 @@ df2 = pd.read_csv('dataCGP.csv')
 #DATA CLEANING
 #print(df2.isnull().sum())
 df2.rename(columns={'Precio Unitario': 'PRECIO'}, inplace = True)
-df2 = df2.drop(columns=['Cantidad'])
-print(df2.head())
+# df2 = df2.drop(columns=['Cantidad'])
+
+# MULTIPLE COLUMN SELECTION
+df2 [['Producto','Origen' ]] #Syntaxis: double brackets for column selection
+#print(df2 [['Producto','Origen' ]])
+
+#CREATE NEW DF FROM AN EXISTING
+df3 = df2 [['Cliente','Total','Origen' ]]
+#print(df3.head())
+
+#SELECTION BY POSITION
+#print(df3.iloc[0:5]) # Brings from 0 to position minus 1 
+#print(df3.loc[25]) # Brings from 0 to position
+
+#SELECTION BY CONDITION
+selection = df3[df3['Total'] > 40] #brings all rows where total is upper than 40
+print (selection)
+#print(df3)
